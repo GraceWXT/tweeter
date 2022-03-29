@@ -1,28 +1,45 @@
+/* 
+ * Nav Bar general setting
+ */
 nav {
   display: flex;
   height: 120px;
   width: 100vw;
   background-color: #4056A1;
   color: #FFFFFF;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
 }
+
+/* 
+ * Logo Style
+ */
 nav span#logo {
-  display: flex;
   font-family: 'Bungee', sans-serif;
   margin-left: 1.5em;
   margin-bottom: 0.5em;
   font-size: 175%;
-  align-self: flex-end;
+}
+
+/*
+ * Callout content to the right of nav bar
+ */
+nav div#callOut {
+  display: flex;
+  margin-right: 1.5em;
+  margin-bottom: 0.5em;
+  flex-direction: column;
+  align-items: center;
 }
 
 nav span {
-  display: flex;
-  margin-right: 1.5em;
   font-size: 125%;
-  align-self: center;
 }
-
-nav span strong {
+/* Add space between "write" and "a new tweet */
+nav strong {
   margin-right: 0.25em;
+}
+/* Icon color */
+.fa-angles-down {
+  color: red;
 }
