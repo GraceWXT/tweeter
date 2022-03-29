@@ -1,0 +1,11 @@
+/* 
+ * Header
+ */
+header {
+  height: 400px;
+  width: 100%;
+  background-color: lavender;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
