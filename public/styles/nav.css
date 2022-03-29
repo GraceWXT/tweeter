@@ -2,6 +2,8 @@
  * Nav Bar general setting
  */
 nav {
+  position: absolute;
+  z-index: 1;
   display: flex;
   height: 120px;
   width: 100vw;
