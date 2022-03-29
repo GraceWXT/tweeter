@@ -2,25 +2,24 @@
  * Header
  */
 header {
-  position: absolute;
-  top: 0%;
   height: 400px;
   width: 100%;
   background-color: lavender;
   background-image: url("https://www.transparenttextures.com/patterns/arches.png");
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
   align-items: center;
 }
 
 #avatar {
+  display: flex;
   justify-self: center;
 }
 
-#name {
-
+/* #name {
   margin-block-start: 0%;
   margin-block-end: 0%;
-}
+} */
 
 
