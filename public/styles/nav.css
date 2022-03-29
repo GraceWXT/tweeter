@@ -11,38 +11,34 @@ nav {
   color: #FFFFFF;
   align-items: flex-end;
   justify-content: space-between;
-}
-
-/* 
- * Logo Style
- */
-nav span#logo {
-  font-family: 'Bungee', sans-serif;
-  margin-left: 1.5em;
-  position: relative;
-  bottom: 0.5em;
   font-size: 175%;
 }
 
-/*
- * Callout content to the right of nav bar
- */
-nav div#callOut {
+/* Layout and margin for the two nav div (logo and call out) */
+nav div {
   display: flex;
+  margin-left: 1.5em;
   margin-right: 1.5em;
   margin-bottom: 0.5em;
   flex-direction: column;
   align-items: center;
-  font-size: 175%;
 }
 
-nav span {
+/* Logo special font */
+nav span#logo {
+  font-family: 'Bungee', sans-serif;
+}
+
+/* callOut smaller font size than logo */
+nav span#callOut {
   font-size: 60%;
 }
+
 /* Add space between "write" and "a new tweet */
 nav strong {
   margin-right: 0.25em;
 }
+
 /* Icon color */
 .fa-angles-down {
   font-size: 60%;
