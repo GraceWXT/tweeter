@@ -33,10 +33,11 @@ nav div#callOut {
   margin-bottom: 0.5em;
   flex-direction: column;
   align-items: center;
+  font-size: 175%;
 }
 
 nav span {
-  font-size: 125%;
+  font-size: 60%;
 }
 /* Add space between "write" and "a new tweet */
 nav strong {
@@ -44,5 +45,6 @@ nav strong {
 }
 /* Icon color */
 .fa-angles-down {
+  font-size: 60%;
   color: red;
 }
