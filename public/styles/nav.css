@@ -5,12 +5,24 @@ nav {
   background-color: #4056A1;
   color: #FFFFFF;
   align-items: center;
+  justify-content: space-between;
 }
+nav span#logo {
+  display: flex;
+  font-family: 'Bungee', sans-serif;
+  margin-left: 1.5em;
+  margin-bottom: 0.5em;
+  font-size: 175%;
+  align-self: flex-end;
+}
+
 nav span {
   display: flex;
-    font-family: 'Bungee', sans-serif;
-    margin-left: 1.5em;
-    margin-bottom: 0.5em;
-    font-size: 175%;
-    align-self: flex-end;
+  margin-right: 1.5em;
+  font-size: 125%;
+  align-self: center;
+}
+
+nav span strong {
+  margin-right: 0.25em;
 }
