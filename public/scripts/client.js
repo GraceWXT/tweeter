@@ -34,25 +34,25 @@ $(() => {
   ]
   
   const createTweetArticle = (tweet) => {
-    const avatar = $("<img>").attr("src", `${tweet.user.avatars}`)
-    const userName = $("<span>").text(tweet.user.name);
-    const divAvaName = $("<div>").addClass("user-avatar-and-name").append(avatar, userName);
-    const divHandle = $("<div>").addClass("handle").append(`<span>${tweet.user.handle}</span>`)
-    const divCreatedAt = $("<div>").addClass("created-at").text(`Created at ${Date(tweet.created_at)}`)
-    const divActionIcons = `
+    const $avatar = $("<img>").attr("src", `${tweet.user.avatars}`)
+    const $userName = $("<span>").text(tweet.user.name);
+    const $divAvaName = $("<div>").addClass("user-avatar-and-name").append($avatar, $userName);
+    const $divHandle = $("<div>").addClass("handle").append(`<span>${tweet.user.handle}</span>`)
+    const $divCreatedAt = $("<div>").addClass("created-at").text(`Created at ${Date(tweet.created_at)}`)
+    const $divActionIcons = `
       <div class="action-icons">
         <i class="fa-solid fa-flag"></i>
         <i class="fa-solid fa-retweet"></i>
         <i class="fa-solid fa-heart"></i>
       </div>
     `;
-    const header = $("<header>").append(divAvaName, divHandle);
-    const p = $("<p>").text(`${tweet.content.text}`);
-    const footer = $("<footer>").append(divCreatedAt, divActionIcons);
+    const $header = $("<header>").append($divAvaName, $divHandle);
+    const $p = $("<p>").text(`${tweet.content.text}`);
+    const $footer = $("<footer>").append($divCreatedAt, $divActionIcons);
 
-    const article = $("<article>").addClass("tweet").append(header, p, footer);
+    const $article = $("<article>").addClass("tweet").append($header, $p, $footer);
 
-    return article;
+    return $article;
   };
   console.log("Create article function loaded")
   const renderTweets = (tweets) => {
