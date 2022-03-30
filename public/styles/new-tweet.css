@@ -13,7 +13,12 @@ section.new-tweet {
   margin-bottom: 0.5em;
 }
 
+form > label {
+  font-weight: bold;
+}
+
 form > div {
   display: flex;
   justify-content: space-between;
+  font-family: 'Bungee', sans-serif;
 }
