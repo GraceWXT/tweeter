@@ -17,8 +17,27 @@ form > label {
   font-weight: bold;
 }
 
+form > textarea {
+  background-color: transparent;
+  border-style: none;
+  border-bottom: solid;
+  border-bottom-color: #545149;
+  border-bottom-width: thick;
+}
+
+:focus-visible {
+  outline: none;
+}
+
 form > div {
   display: flex;
   justify-content: space-between;
+  color: #545149;
   font-family: 'Bungee', sans-serif;
+}
+
+form > div > button {
+  border-style: none;
+  background-color: #4056A1;
+  color: #FFFFFF;
 }
