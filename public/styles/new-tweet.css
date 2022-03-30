@@ -24,6 +24,7 @@ form > label {
   border-bottom: solid;
   border-bottom-color: #545149;
   border-bottom-width: thick;
+  resize: none;
 }
 
 #tweet-text:focus-visible {

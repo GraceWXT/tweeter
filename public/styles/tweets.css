@@ -23,20 +23,51 @@ article.tweet > header {
   flex-direction: row;
   justify-content: space-between;
 }
-/* Child elements of header */
+/* Child elements of header & footer */
+
 article.tweet > header > div {
-  
+  display: flex;
+  align-items: center;
 }
+
+article.tweet > header > div.user-avatar-and-name {
+  font-size:larger
+}
+article.tweet > header > div.user-avatar-and-name> span {
+  margin-left: 0.5em;
+}
+
+article.tweet img {
+  height: 1.5em;
+  width: auto;
+  border-radius: 50%;
+}
+
+article.tweet > header > div.username {
+  color: rgb(172, 172, 172);
+  font-weight: 600;
+}
+
+article.tweet > header i {
+  height: 28px;
+  width: 28px;
+  margin: 0.5em;
+}
+
 
 /* Tweet <p> */
 article.tweet > p {
   width: 95%;
+  font-weight: 600;
 }
 /* Tweet footer */
 article.tweet > footer {
   width: 98%;
   margin-top: 1em;
   margin-bottom: 1em;
+  padding-right: 0.7em;
+  padding-left: 0.7em;
+  padding-top: 0.5em;
   border-top-style: solid;
   border-top-width: thick;
   display: flex;
@@ -46,6 +77,14 @@ article.tweet > footer {
 
 /* Child elements of footer */
 
-article.tweet > footer > div {
+article.tweet > footer i {
+  height: 28px;
+  width: 28px;
+  color: #4056A1;
+}
 
+article.tweet > footer i:hover {
+  height: 28px;
+  width: 28px;
+  color: rgb(218, 200, 0);
 }
