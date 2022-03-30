@@ -23,6 +23,11 @@ article.tweet > header {
   flex-direction: row;
   justify-content: space-between;
 }
+/* Child elements of header */
+article.tweet > header > div {
+  
+}
+
 /* Tweet <p> */
 article.tweet > p {
   width: 95%;
@@ -37,4 +42,10 @@ article.tweet > footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+/* Child elements of footer */
+
+article.tweet > footer > div {
+
 }
