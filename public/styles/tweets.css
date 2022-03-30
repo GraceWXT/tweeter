@@ -1,0 +1,40 @@
+/* Tweets Container layout */
+section#tweets-container {
+  width: 100%;
+}
+
+/* Individual Tweet */
+article.tweet {
+  border-style: solid;
+  border-width: thick;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Tweet header */
+article.tweet > header {
+  width: 96%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+/* Tweet <p> */
+article.tweet > p {
+  width: 95%;
+}
+/* Tweet footer */
+article.tweet > footer {
+  width: 98%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  border-top-style: solid;
+  border-top-width: thick;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

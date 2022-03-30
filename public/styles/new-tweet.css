@@ -1,5 +1,6 @@
 /* New-tweet section & form layout */
 section.new-tweet {
+  width: 98%;
   margin-top: 2em;
   margin-bottom: 2em;
 }
