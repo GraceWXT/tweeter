@@ -8,9 +8,9 @@ $(document).ready(function() {
     // Add - delete a class "warning" when the counter is less than - not less than 0, to trigger the CSS style rule
     let counterValue = $("output.counter").val();
     if (counterValue < 0) {
-      $("output.counter").attr("class", "counter warning");
+      $("output.counter").addClass( "warning");
     } else {
-      $("output.counter").attr("class", "counter");
+      $("output.counter").removeClass("warning");
     }
   });
 
