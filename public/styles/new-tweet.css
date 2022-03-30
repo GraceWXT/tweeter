@@ -1,3 +1,4 @@
+/* New-tweet section & form layout */
 section.new-tweet {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
@@ -8,16 +9,15 @@ section.new-tweet {
   flex-direction:column;
 }
 
-#tweet-text {
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-}
-
+/* Form label format */
 form > label {
   font-weight: bold;
 }
 
-form > textarea {
+/* Textarea format */
+#tweet-text {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
   background-color: transparent;
   border-style: none;
   border-bottom: solid;
@@ -25,10 +25,11 @@ form > textarea {
   border-bottom-width: thick;
 }
 
-:focus-visible {
+#tweet-text:focus-visible {
   outline: none;
 }
 
+/* Button and counter layout */
 form > div {
   display: flex;
   justify-content: space-between;
@@ -36,8 +37,14 @@ form > div {
   font-family: 'Bungee', sans-serif;
 }
 
+/* Button format */
 form > div > button {
   border-style: none;
   background-color: #4056A1;
   color: #FFFFFF;
+}
+
+/* Char counter format when count is less than 140 */
+output.counter.warning {
+  color: rgb(226, 60, 60);
 }
