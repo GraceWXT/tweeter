@@ -4,8 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-
-
 $(() => {
   // test data taken from initial-tweets.json
   const user1 = {
@@ -30,7 +28,8 @@ $(() => {
     },
     "created_at": 1648572125887
   };
-  // const tweets = [ user1, user2 ];
+
+  const tweets = [ user1, user2 ];
 
   
   const createTweetArticle = (tweet) => {
@@ -51,13 +50,14 @@ $(() => {
 
     return $article;
   };
-  console.log("Create article function loaded")
-  console.log(createTweetArticle(user1), createTweetArticle(user2))
   const renderTweets = (tweets) => {
-    
+    for (const tweet of tweets) {
+      const $article = createTweetArticle(tweet);
+      $("section#tweets-container").append($article);
+    }
   };
   console.log("Rendering function loaded")
 
-  // renderTweets(tweets);
+  renderTweets(tweets);
 
 });
