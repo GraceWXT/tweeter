@@ -15,12 +15,15 @@ $(() => {  // The function will run when the document is ready
     const $divAvaName = $("<div>").addClass("user-avatar-and-name").append($avatar, $userName);
     const $divHandle = $("<div>").addClass("handle").append(`<span>${tweet.user.handle}</span>`);
     
-    // Calculate the day & hour difference from tweet creation tumestamp to provide the text to footer
+    // Calculate the day & hour difference from tweet creation timestamp to provide the text to footer
     const day = Math.floor((Date.now() - tweet.created_at) / (24 * 3600 * 1000));
     const hour = Math.floor(((Date.now() - tweet.created_at) % (24 * 3600 * 1000)) / (3600 * 1000));
     const dayText = `${day ? day : ""}${day ? (day !== 1 ? " days " : " day ") : ""}`;
     const hourText = `${hour}${hour !== 1 ? " hours " : " hour "}`;
     const createdTimeText = `${dayText ? dayText : ""}${hourText}ago`;
+
+    // If were to use the timeago library provided on Compass
+    // const createdTimeText = timeago.format(tweet.created_at);
     
     // Create the children elements for footer
     const $divCreatedAt = $("<div>").addClass("created-at").text(createdTimeText);
