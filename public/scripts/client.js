@@ -70,4 +70,9 @@ $(() => {
 
   renderTweets(tweets);
 
+  $("section.new-tweet > form").submit((event) => {
+    event.preventDefault();
+    console.log("Submission prevented");
+  })
+
 });
