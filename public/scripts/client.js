@@ -53,7 +53,7 @@ $(() => {  // The function will run when the document is ready
   /** A function that will send a request to get the tweets JSON array,
    * and pass it to the renderTweets function to render the tweets content on the website.
    */
-  const loadTweets = function () {
+  const loadTweets = function() {
     $.ajax({
       method: "GET",
       url: "/tweets"
@@ -69,6 +69,16 @@ $(() => {  // The function will run when the document is ready
   $("section.new-tweet > form").submit((event) => {
     // Prevent the browser default behaviour for a submit event
     event.preventDefault();
+    const textarea = $("textarea#tweet-text");
+    // Error handler one: textarea is empty
+    if (!textarea.val()) {
+      return alert("The tweet is empty!");
+    }
+    //Error handler two: tweet is more than 140 characters
+    if (textarea.val().length > 140) {
+      return alert("The tweet is too long!");
+    }
+
     // Serialize the data in the form to a querystring so that we can send it in a HTTP request
     const newTweet = $("section.new-tweet > form").serialize();
     // console.log(newTweet);  // To see the serialized data and verify it's correct
@@ -77,6 +87,6 @@ $(() => {  // The function will run when the document is ready
       method: "POST",
       url: "/tweets",
       data: newTweet
-    })
+    });
   });
 });
