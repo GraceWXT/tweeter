@@ -46,7 +46,7 @@ $(() => {  // The function will run when the document is ready
   const renderTweets = (tweets) => {
     for (const tweet of tweets) {
       const $article = createTweetArticle(tweet);
-      $("section#tweets-container").append($article);
+      $("section#tweets-container").prepend($article);
     }
   };
 
