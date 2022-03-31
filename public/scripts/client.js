@@ -70,12 +70,13 @@ $(() => {  // The function will run when the document is ready
     const textarea = $("textarea#tweet-text");
     // Error handler one: textarea is empty
     if (!textarea.val()) {
-      $("#empty").show();
-      return textarea.on("input", () => {$("#empty").hide()});
+      $("#empty").slideDown();
+      return textarea.on("input", () => {$("#empty").slideUp()});
     } 
     //Error handler two: tweet is more than 140 characters
     if (textarea.val().length > 140) {
-      return alert("The tweet is too long!");
+      $("#too-long").slideDown();
+      return textarea.on("input", () => {$("#too-long").slideUp()});
     }
     // Serialize the data in the form to a querystring so that we can send it in a HTTP request
     const newTweet = $("section.new-tweet > form").serialize();
