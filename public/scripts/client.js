@@ -70,8 +70,9 @@ $(() => {  // The function will run when the document is ready
     const textarea = $("textarea#tweet-text");
     // Error handler one: textarea is empty
     if (!textarea.val()) {
-      return alert("The tweet is empty!");
-    }
+      $("#empty").show();
+      return textarea.on("input", () => {$("#empty").hide()});
+    } 
     //Error handler two: tweet is more than 140 characters
     if (textarea.val().length > 140) {
       return alert("The tweet is too long!");

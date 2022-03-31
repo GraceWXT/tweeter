@@ -84,7 +84,5 @@ article.tweet > footer i {
 }
 
 article.tweet > footer i:hover {
-  height: 28px;
-  width: 28px;
   color: rgb(218, 200, 0);
 }

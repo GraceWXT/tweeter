@@ -54,6 +54,8 @@ form > footer button {
 /* Error messages format */
 form > footer p.error {
   margin-left: 1em;
+  margin-top: 0em;
+  margin-bottom: 0em;
   color: rgb(226, 60, 60);
   font-weight: bold;
   font-size: large;
