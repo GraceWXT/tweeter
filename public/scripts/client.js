@@ -61,6 +61,8 @@ $(() => {
 
     return $article;
   };
+
+  // Render the page content based on the database
   const renderTweets = (tweets) => {
     for (const tweet of tweets) {
       const $article = createTweetArticle(tweet);
@@ -70,9 +72,19 @@ $(() => {
 
   renderTweets(tweets);
 
-  $("section.new-tweet > form").submit((event) => {
-    event.preventDefault();
-    console.log("Submission prevented");
-  })
+  // Handle new tweet submission
 
+  $("section.new-tweet > form").submit((event) => {
+    // Prevent the browser default behaviour for a submit event
+    event.preventDefault();
+    // Serialize the data in the form so that we can send it in a HTTP request
+    const newTweet = $("section.new-tweet > form").serialize();
+    // console.log(newTweet);  // To see the serialized data and verify it's correct
+    // Send the AJAX request
+    $.ajax({
+      method: "POST",
+      url: "/tweets",
+      data: newTweet
+    })
+  });
 });
