@@ -54,10 +54,8 @@ $(() => {  // The function will run when the document is ready
    * and pass it to the renderTweets function to render the tweets content on the website.
    */
   const loadTweets = function() {
-    $.ajax({
-      method: "GET",
-      url: "/tweets"
-    }).then((tweets) => {
+    $.ajax("/tweets").then((tweets) => {
+      $("section#tweets-container").empty();
       renderTweets(tweets);
     });
   };
@@ -78,15 +76,19 @@ $(() => {  // The function will run when the document is ready
     if (textarea.val().length > 140) {
       return alert("The tweet is too long!");
     }
-
     // Serialize the data in the form to a querystring so that we can send it in a HTTP request
     const newTweet = $("section.new-tweet > form").serialize();
     // console.log(newTweet);  // To see the serialized data and verify it's correct
-    // Send the AJAX request
+    // Send the AJAX POST request
     $.ajax({
       method: "POST",
       url: "/tweets",
       data: newTweet
-    });
+    })
+    // Empty the textarea, and load the updated tweets JSON
+      .then(() => {
+        textarea.val("");
+        loadTweets();
+      })
   });
 });
