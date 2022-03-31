@@ -9,7 +9,7 @@ $(() => {
   const user1 = {
     "user": {
       "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
+      "avatars": "https://github.com/GraceWXT/tweeter/blob/master/public/images/user-avatar-1.png?raw=true",
       "handle": "@SirIsaac"
     },
     "content": {
@@ -20,7 +20,7 @@ $(() => {
   const user2 = {
     "user": {
       "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
+      "avatars": "https://raw.githubusercontent.com/GraceWXT/tweeter/23e8794ae8276690bc58127ab35979fa57147112/public/images/user-avatar-2.png",
       "handle": "@rd"
     },
     "content": {
@@ -33,24 +33,29 @@ $(() => {
 
   
   const createTweetArticle = (tweet) => {
+
     // Create the children elements for header
-    const $avatar = $("<img>").attr("src", `${tweet.user.avatars}`)
+    const $avatar = $("<img>").attr("src", `${tweet.user.avatars}`);
     const $userName = $("<span>").text(tweet.user.name);
     const $divAvaName = $("<div>").addClass("user-avatar-and-name").append($avatar, $userName);
-    const $divHandle = $("<div>").addClass("handle").append(`<span>${tweet.user.handle}</span>`)
+    const $divHandle = $("<div>").addClass("handle").append(`<span>${tweet.user.handle}</span>`);
+    
     // Calculate the day & hour difference from tweet creation tumestamp to provide the text to footer
     const day = Math.floor((Date.now() - tweet.created_at) / (24 * 3600 * 1000));
     const hour = Math.floor(((Date.now() - tweet.created_at) % (24 * 3600 * 1000)) / (3600 * 1000));
-    const dayText = `${day ? day : ""}${day ? (day !== 1 ? " days " : " day "): ""}`;
+    const dayText = `${day ? day : ""}${day ? (day !== 1 ? " days " : " day ") : ""}`;
     const hourText = `${hour}${hour !== 1 ? " hours " : " hour "}`;
-    const createdTimeText = `${dayText? dayText : ""}${hourText}ago`
+    const createdTimeText = `${dayText ? dayText : ""}${hourText}ago`;
+    
     // Create the children elements for footer
     const $divCreatedAt = $("<div>").addClass("created-at").text(createdTimeText);
     const $divActionIcons = $("<div>").addClass("action-icons").append(`<i class="fa-solid fa-flag"></i>`, `<i class="fa-solid fa-retweet"></i>`, `<i class="fa-solid fa-heart"></i>`);
+    
     // Create header, p and footer elements and append the children elements & text to them accordingly
     const $header = $("<header>").append($divAvaName, $divHandle);
     const $p = $("<p>").text(`${tweet.content.text}`);
     const $footer = $("<footer>").append($divCreatedAt, $divActionIcons);
+    
     // Create an article element and append everything
     const $article = $("<article>").addClass("tweet").append($header, $p, $footer);
 
@@ -62,7 +67,6 @@ $(() => {
       $("section#tweets-container").append($article);
     }
   };
-  console.log("Rendering function loaded")
 
   renderTweets(tweets);
 
