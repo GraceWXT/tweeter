@@ -5,33 +5,16 @@
  */
 
 $(() => {
-  // test data taken from initial-tweets.json
-  const user1 = {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://github.com/GraceWXT/tweeter/blob/master/public/images/user-avatar-1.png?raw=true",
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1648684074309
+  const loadTweets = function () {
+    $.ajax({
+      method: "GET",
+      url: "/tweets"
+    }).then((data) => {
+      console.log(`loadTweets function has been excuted: ${JSON.stringify(data)}`);
+    });
   };
-  const user2 = {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://raw.githubusercontent.com/GraceWXT/tweeter/23e8794ae8276690bc58127ab35979fa57147112/public/images/user-avatar-2.png",
-      "handle": "@rd"
-    },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1648572125887
-  };
-
-  const tweets = [ user1, user2 ];
-
-  
+  loadTweets();
+    
   const createTweetArticle = (tweet) => {
 
     // Create the children elements for header
@@ -70,7 +53,7 @@ $(() => {
     }
   };
 
-  renderTweets(tweets);
+  // renderTweets(tweets);
 
   // Handle new tweet submission
 
