@@ -4,17 +4,9 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$(() => {
-  const loadTweets = function () {
-    $.ajax({
-      method: "GET",
-      url: "/tweets"
-    }).then((data) => {
-      console.log(`loadTweets function has been excuted: ${JSON.stringify(data)}`);
-    });
-  };
-  loadTweets();
-    
+$(() => {  // The function will run when the document is ready
+
+  /** A function that creates the <article> element for each tweet. */
   const createTweetArticle = (tweet) => {
 
     // Create the children elements for header
@@ -34,18 +26,20 @@ $(() => {
     const $divCreatedAt = $("<div>").addClass("created-at").text(createdTimeText);
     const $divActionIcons = $("<div>").addClass("action-icons").append(`<i class="fa-solid fa-flag"></i>`, `<i class="fa-solid fa-retweet"></i>`, `<i class="fa-solid fa-heart"></i>`);
     
-    // Create header, p and footer elements and append the children elements & text to them accordingly
+    // Create the header, p and footer elements and append the children elements & text to them accordingly
     const $header = $("<header>").append($divAvaName, $divHandle);
     const $p = $("<p>").text(`${tweet.content.text}`);
     const $footer = $("<footer>").append($divCreatedAt, $divActionIcons);
     
-    // Create an article element and append everything
+    // Create an article element that contains everything
     const $article = $("<article>").addClass("tweet").append($header, $p, $footer);
 
     return $article;
   };
 
-  // Render the page content based on the database
+  /** A function that receives an array of objects (tweets),
+   * loop over each element to create <article> elements,
+   * and append the created elements to the #tweets-container <section>.  */
   const renderTweets = (tweets) => {
     for (const tweet of tweets) {
       const $article = createTweetArticle(tweet);
@@ -53,14 +47,26 @@ $(() => {
     }
   };
 
-  // renderTweets(tweets);
+  /** A function that will send a request to get the tweets JSON array,
+   * and pass it to the renderTweets function to render the tweets content on the website.
+   */
+  const loadTweets = function () {
+    $.ajax({
+      method: "GET",
+      url: "/tweets"
+    }).then((tweets) => {
+      renderTweets(tweets);
+    });
+  };
 
-  // Handle new tweet submission
+  loadTweets();
+
+  /** An event handler that handles new tweet submission asynchronously */
 
   $("section.new-tweet > form").submit((event) => {
     // Prevent the browser default behaviour for a submit event
     event.preventDefault();
-    // Serialize the data in the form so that we can send it in a HTTP request
+    // Serialize the data in the form to a querystring so that we can send it in a HTTP request
     const newTweet = $("section.new-tweet > form").serialize();
     // console.log(newTweet);  // To see the serialized data and verify it's correct
     // Send the AJAX request
