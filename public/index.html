@@ -56,10 +56,14 @@
         <form action="/tweets" method="POST">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
-          <div>
-            <button type="submit">Tweet</button>
+          <footer>
+            <div>
+              <button type="submit">Tweet</button>
+              <p class="error" id="empty" hidden>There's nothing to tweet! Please add more thoughts. : )</p>
+              <p class="error" id="too-long" hidden>Sorry the tweet is too long! Try shorten it or split it into two. : )</p>
+            </div>
             <output name="counter" class="counter" for="tweet-text">140</output>
-          </div>
+          </footer>
         </form>
       </section>
       <section id="tweets-container">

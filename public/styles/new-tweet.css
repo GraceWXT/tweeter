@@ -31,22 +31,36 @@ form > label {
   outline: none;
 }
 
-/* Button and counter layout */
-form > div {
+/* Footer layout */
+form > footer {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   color: #545149;
   font-family: 'Bungee', sans-serif;
 }
 
+form > footer > div {
+  display: flex;
+}
+
 /* Button format */
-form > div > button {
+form > footer button {
   border-style: none;
   background-color: #4056A1;
   color: #FFFFFF;
 }
 
-/* Char counter format when count is less than 140 */
+/* Error messages format */
+form > footer p.error {
+  margin-left: 1em;
+  color: rgb(226, 60, 60);
+  font-weight: bold;
+  font-size: large;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* Char counter warning format when count is less than 140 */
 output.counter.warning {
   color: rgb(226, 60, 60);
 }
