@@ -22,7 +22,7 @@ $(() => {  // The function will run when the document is ready
     const hourText = `${hour}${hour !== 1 ? " hours " : " hour "}`;
     const createdTimeText = `${dayText ? dayText : ""}${hourText}ago`;
 
-    // If were to use the timeago library provided on Compass
+    // If were to use the timeago library provided on Compass:
     // const createdTimeText = timeago.format(tweet.created_at);
     
     // Create the children elements for footer
@@ -86,7 +86,6 @@ $(() => {  // The function will run when the document is ready
     }
     // Serialize the data in the form to a querystring so that we can send it in a HTTP request
     const newTweet = $("section.new-tweet > form").serialize();
-    // console.log(newTweet);  // To see the serialized data and verify it's correct
     // Send the AJAX POST request
     $.ajax({
       method: "POST",

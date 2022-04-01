@@ -2,6 +2,7 @@
  * Tweets Container layout
  */
 section#tweets-container {
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
