@@ -90,6 +90,7 @@ $(() => {  // The function will run when the document is ready
     // Empty the textarea, and load the updated tweets JSON
       .then(() => {
         textarea.val("");
+        $("output.counter").val(140);
         loadTweets();
       })
   });
