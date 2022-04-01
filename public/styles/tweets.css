@@ -1,9 +1,16 @@
-/* Tweets Container layout */
+/* 
+ * Tweets Container layout
+ */
 section#tweets-container {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Individual Tweet */
+/* 
+ * Individual Tweets
+ */
+
+/* layout */
 article.tweet {
   border-style: solid;
   border-width: thick;
@@ -14,21 +21,21 @@ article.tweet {
   align-items: center;
 }
 
+/* box shadow on hover */
 article.tweet:hover {
   box-shadow: 10px 10px 7px 1px rgba(0, 0, 255, .2);
 }
 
-/* Tweet header */
+/* Tweet header layout */
 article.tweet > header {
   width: 96%;
   margin-top: 1em;
   margin-bottom: 1em;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
 }
-/* Child elements of header & footer */
 
+/* Child elements of header */
 article.tweet > header > div {
   display: flex;
   align-items: center;
@@ -37,14 +44,15 @@ article.tweet > header > div {
 article.tweet > header > div.user-avatar-and-name {
   font-size:larger
 }
-article.tweet > header > div.user-avatar-and-name> span {
-  margin-left: 0.5em;
-}
 
 article.tweet img {
   height: 1.5em;
   width: auto;
   border-radius: 50%;
+}
+
+article.tweet > header > div.user-avatar-and-name > span {
+  margin-left: 0.5em;
 }
 
 article.tweet > header > div.handle {
@@ -53,12 +61,13 @@ article.tweet > header > div.handle {
 }
 
 
-/* Tweet <p> */
+/* Tweet body <p> */
 article.tweet > p {
   width: 95%;
   font-weight: 600;
 }
-/* Tweet footer */
+
+/* Tweet footer layout */
 article.tweet > footer {
   width: 98%;
   margin-top: 1em;
@@ -69,7 +78,6 @@ article.tweet > footer {
   border-top-style: solid;
   border-top-width: thick;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
 }
 
@@ -82,6 +90,6 @@ article.tweet > footer i.fa-solid {
   margin-left: 0.5em;
 }
 
-article.tweet > footer i:hover {
+article.tweet > footer i.fa-solid:hover {
   color: rgb(218, 200, 0);
 }

@@ -35,19 +35,23 @@ form > footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #545149;
   font-family: 'Bungee', sans-serif;
 }
 
+/* A div that contains tweet button and hidden error messsages */
 form > footer > div {
   display: flex;
 }
 
-/* Button format */
+/* Tweet button format */
 form > footer button {
   border-style: none;
   background-color: #4056A1;
   color: #FFFFFF;
+}
+/* box shadow on hover */
+form > footer button:hover {
+box-shadow: 3px 3px 1px 1px rgb(0 0 255 / 20%)
 }
 
 /* Error messages format */

@@ -1,6 +1,8 @@
 /* 
  * Header
  */
+
+/* Default mobile devise style */
 body > header {
   height: 520px;
   width: 100%;
@@ -12,21 +14,23 @@ body > header {
   align-items: center;
 }
 
+/* Responsive design for desktop sized screen
+ * Height and width  rules will override mobile ones */
 @media screen and (min-width: 1024px) {
   body > header {
+    height: 400px;
+    max-width: 400px;
     position: relative;
     top: 120px;
     width: 30%;
     margin: 3%;
     margin-right: 0%;
-    height: 400px;
-    max-width: 400px;
   }
 }
 
-#avatar {
+/* Rules to make the avatar and name properly positioned - mobile and/or desktop */
+div#avatar {
   display: flex;
-  justify-self: center;
 }
 
 @media screen and (max-width: 1024px) {

@@ -1,6 +1,7 @@
 /* 
  * Nav Bar general setting
  */
+ /* Default mobile devise style */
 nav {
   position: fixed;
   z-index: 1;
@@ -13,7 +14,11 @@ nav {
   justify-content: space-between;
   font-size: 175%;
 }
-
+/* changes color when the header is completely scrolled up in mobile mode*/
+nav.scrolled {
+  background-color: rgb(180 180 255 / 60%);
+}
+/* Responsive design for desktop sized screen */
 @media screen and (min-width: 1024px) {
   nav {
     background-color: #4056A1;
@@ -48,5 +53,5 @@ nav strong {
 /* Icon color */
 .fa-angles-down {
   font-size: 60%;
-  color: red;
+  color: rgb(226, 60, 60);
 }

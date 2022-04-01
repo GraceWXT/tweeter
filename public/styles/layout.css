@@ -25,10 +25,11 @@ body {
 }
 
 
-/*
-* Additional CSS can be defined below or in other CSS files, as per instructions
-*/
+/* 
+ * The main conatiner layout
+ */
 
+/* Default mobile devise style */
 main.container {
   width: 90%;
   margin-left: 5%;
@@ -38,6 +39,8 @@ main.container {
   align-items: center;
 }
 
+/* Responsive design for desktop sized screen
+ * Width and margin rules will override mobile ones */
 @media screen and (min-width: 1024px) {
   main.container {
     width: 60%;

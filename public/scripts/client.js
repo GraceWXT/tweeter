@@ -52,7 +52,9 @@ $(() => {  // The function will run when the document is ready
 
   /** A function that will send a request to get the tweets JSON array,
    * and pass it to the renderTweets function to render the tweets content on the website.
-   */
+   * The tweets container will be emptied right before tweets are loaded,
+   * so that there will be no duplicated data,
+   * and user will not see too long a blank page before it is rendered.   */
   const loadTweets = function() {
     $.ajax("/tweets").then((tweets) => {
       $("section#tweets-container").empty();
@@ -68,15 +70,19 @@ $(() => {  // The function will run when the document is ready
     // Prevent the browser default behaviour for a submit event
     event.preventDefault();
     const textarea = $("textarea#tweet-text");
-    // Error handler one: textarea is empty
-    if (!textarea.val()) {
+    // Error handler one: textarea is empty or content is only whitespace
+    if (!textarea.val() || !textarea.val().trim()) {
       $("#empty").slideDown();
-      return textarea.on("input", () => {$("#empty").slideUp()});
-    } 
+      return textarea.on("input", () => {
+        $("#empty").slideUp();
+      });
+    }
     //Error handler two: tweet is more than 140 characters
     if (textarea.val().length > 140) {
       $("#too-long").slideDown();
-      return textarea.on("input", () => {$("#too-long").slideUp()});
+      return textarea.on("input", () => {
+        $("#too-long").slideUp();
+      });
     }
     // Serialize the data in the form to a querystring so that we can send it in a HTTP request
     const newTweet = $("section.new-tweet > form").serialize();
@@ -87,11 +93,11 @@ $(() => {  // The function will run when the document is ready
       url: "/tweets",
       data: newTweet
     })
-    // Empty the textarea, and load the updated tweets JSON
+    // Empty the textarea, reset the character counter and load the updated tweets JSON
       .then(() => {
         textarea.val("");
         $("output.counter").val(140);
         loadTweets();
-      })
+      });
   });
 });
