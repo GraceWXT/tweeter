@@ -43,7 +43,7 @@ article.tweet img {
   border-radius: 50%;
 }
 
-article.tweet > header > div.username {
+article.tweet > header > div.handle {
   color: rgb(172, 172, 172);
   font-weight: 600;
 }
