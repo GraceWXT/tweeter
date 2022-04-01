@@ -7,11 +7,17 @@ nav {
   display: flex;
   height: 120px;
   width: 100vw;
-  background-color: #4056A1;
+  background-color: transparent;
   color: #FFFFFF;
   align-items: flex-end;
   justify-content: space-between;
   font-size: 175%;
+}
+
+@media screen and (min-width: 1024px) {
+  nav {
+    background-color: #4056A1;
+  }
 }
 
 /* Layout and margin for the two nav div (logo and call out) */

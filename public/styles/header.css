@@ -12,7 +12,25 @@ body > header {
   align-items: center;
 }
 
+@media screen and (min-width: 1024px) {
+  body > header {
+    position: relative;
+    top: 120px;
+    width: 30%;
+    margin: 3%;
+    margin-right: 0%;
+    height: 400px;
+    max-width: 400px;
+  }
+}
+
 #avatar {
   display: flex;
   justify-self: center;
+}
+
+@media screen and (max-width: 1024px) {
+  header h2 {
+    margin-bottom: 1.66em;
+  }
 }

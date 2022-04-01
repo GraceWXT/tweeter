@@ -48,12 +48,6 @@ article.tweet > header > div.handle {
   font-weight: 600;
 }
 
-article.tweet > header i {
-  height: 28px;
-  width: 28px;
-  margin: 0.5em;
-}
-
 
 /* Tweet <p> */
 article.tweet > p {
@@ -77,10 +71,11 @@ article.tweet > footer {
 
 /* Child elements of footer */
 
-article.tweet > footer i {
+article.tweet > footer i.fa-solid {
   height: 28px;
   width: 28px;
   color: #4056A1;
+  margin-left: 0.5em;
 }
 
 article.tweet > footer i:hover {

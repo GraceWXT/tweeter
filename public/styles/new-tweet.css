@@ -25,11 +25,10 @@ form > label {
   border-bottom-color: #545149;
   border-bottom-width: thick;
   resize: none;
+  outline: none;
+  overflow-wrap: break-word;
 }
 
-#tweet-text:focus-visible {
-  outline: none;
-}
 
 /* Footer layout */
 form > footer {
